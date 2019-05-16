@@ -1,0 +1,20 @@
+server:
+  port: 8080
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+  datasource:
+    url: "jdbc:postgresql://localhost:5433/app"
+    username: "app"
+    password: "app1dev"
+    driverClassName: org.postgresql.Driver
+keycloak:
+  auth-server-url: http://localhost:8081/auth/
+  resource: simple-app
+  realm: Simple_Project
+  public-client: true
+  principal-attribute: preferred_username
+  ssl-required : none
