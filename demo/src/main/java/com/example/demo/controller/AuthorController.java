@@ -24,7 +24,7 @@ public class AuthorController {
     }
 
 
-    @GetMapping("/")
+    @GetMapping
     @PreAuthorize("hasRole('ROLE_USER')")
     public List<Author> getAllAuthors() {
         return authorRepository.findAll();
@@ -43,7 +43,7 @@ public class AuthorController {
         authorRepository.deleteById(id);
     }
 
-    @PostMapping("/")
+    @PostMapping
     @PreAuthorize("hasRole('ROLE_MANAGER')")
     public void saveAuthor(@RequestBody Author author) {
         authorRepository.save(author);
