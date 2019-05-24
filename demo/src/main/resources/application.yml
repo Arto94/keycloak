@@ -18,3 +18,8 @@ keycloak:
   public-client: true
   principal-attribute: preferred_username
   ssl-required : none
+
+
+authUrl: http://localhost:8081/auth/realms/Simple_Project/protocol/openid-connect/token
+
+clientId: simple-app
