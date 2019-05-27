@@ -66,7 +66,6 @@ class SecurityConfig extends KeycloakWebSecurityConfigurerAdapter {
                 .antMatchers(
                         "/v2/api-docs",
                         "/swagger-resources/**",
-                        "/swagger-ui.html",
                         "/webjars/**", "/auth")
                 .permitAll()
                 .anyRequest().authenticated();
