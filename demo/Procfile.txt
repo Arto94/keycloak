@@ -1,2 +1,0 @@
-web java -Dserver.port=8089 $JAVA_OPTS -jar target/
-demo-authorization-0.0.1-SNAPSHOT.jar
