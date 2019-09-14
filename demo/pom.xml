@@ -25,15 +25,10 @@
     </properties>
 
     <dependencies>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <scope>runtime</scope>
         </dependency>
 
         <dependency>
@@ -51,7 +46,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
-
 
         <dependency>
             <groupId>io.springfox</groupId>
@@ -87,6 +81,12 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-bean-validators</artifactId>
             <version>2.9.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
         </dependency>
 
     </dependencies>

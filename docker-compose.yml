@@ -5,35 +5,34 @@ networks:
     driver: bridge
 services:
   database:
-    image: postgres:9.6.9
+    image: mysql:5.7
     networks:
       - dev-network
     ports:
-      - '5433:5432'
+      - '3306:3306'
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - simple-postgresql:/var/lib/postgresql:Z
+      - simple-mysql:/var/lib/mysql
   keycloak:
     networks:
       - dev-network
-    image: jboss/keycloak:4.5.0.Final
+    image: jboss/keycloak:7.0.0
     restart: on-failure
 
     environment:
       - KEYCLOAK_USER=keyadmin
       - KEYCLOAK_PASSWORD=k3radmin
-      - DB_VENDOR=postgres
+      - DB_VENDOR=mysql
       - DB_USER=keycloak
       - DB_PASSWORD=k34cloak
       - DB_ADDR=database
-      - DB_PORT=5432
+      - DB_PORT=3306
       - DB_DATABASE=keycloakdb
       - PROXY_ADDRESS_FORWARDING=true
     ports:
       - "8081:8080"
-      - "8443:8443"
     depends_on:
       - database
 volumes:
-  simple-postgresql:
+  simple-mysql:
     external: true

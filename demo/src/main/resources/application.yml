@@ -2,15 +2,15 @@ server:
   port: 8080
 spring:
   jpa:
-    database: POSTGRESQL
-    show-sql: true
-    hibernate:
-      ddl-auto: create-drop
+    database: MYSQL
   datasource:
-    url: "jdbc:postgresql://localhost:5433/app"
-    username: "app"
-    password: "app1dev"
-    driverClassName: org.postgresql.Driver
+    url: jdbc:mysql://localhost:3306/author_book?useSSl=false&characterEncoding=utf8&characterSetResults=utf8
+    username: dev
+    password: dev
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+
 keycloak:
   auth-server-url: http://localhost:8081/auth/
   resource: simple-app
