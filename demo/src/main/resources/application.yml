@@ -23,3 +23,5 @@ keycloak:
 authUrl: http://localhost:8081/auth/realms/Simple_Project/protocol/openid-connect/token
 
 clientId: simple-app
+
+isKeycloakEnabled: true
